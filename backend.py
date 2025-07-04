@@ -2,9 +2,7 @@
 from datetime import date, datetime
 import math
 import os
-import re
 import json
-import time
 import requests
 from groq import Groq
 from dotenv import load_dotenv
