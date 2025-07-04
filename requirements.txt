@@ -1,3 +1,9 @@
 groq
+mistralai
 streamlit
+python-dotenv
+requests
+matplotlib
+tempfile
+
 
