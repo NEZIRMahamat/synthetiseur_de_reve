@@ -22,7 +22,7 @@ def read_file(file_path):
 # Trancription de l'audio en text : Audio to text -> print(result)
 def speech_to_text(file_path, language="fr"):
     # Le cas où le fichier n'existe pas
-    if not os.path.exists(file):
+    if not os.path.exists(file_path):
         raise FileNotFoundError(f"Le fichier introuuvable {file_path}")
 
     client = Groq(api_key=os.environ["GROQ_API_KEY"])
@@ -93,7 +93,7 @@ def prompt_to_image(prompt):
     url = 'https://clipdrop-api.co/text-to-image/v1'
     headers = { 'x-api-key': os.environ["CLIPDROP_API_KEY"]}
     files = {
-        'prompt': (None, f"Génère moi ce rêve text ci-dessous en image sympa, immersive et factuelle: {prompt}", 'text/plain')
+        'prompt': (None, f"Génère moi ce rêve écrit en text ci-dessous en une image sympa, immersive et factuelle: {prompt}", 'text/plain')
     }
     try:
         response = requests.post(url=url, headers=headers, files=files)
